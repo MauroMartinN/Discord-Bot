@@ -13,7 +13,9 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 initial_extensions = [
-    "cogs.chat_cog"
+    "cogs.chat_cog",
+    "cogs.moderation_cog",
+    "cogs.music_cog"
 ]
 
 async def main():
