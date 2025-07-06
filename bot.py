@@ -15,7 +15,8 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 initial_extensions = [
     "cogs.chat_cog",
     "cogs.moderation_cog",
-    "cogs.music_cog"
+    "cogs.music_cog",
+    "cogs.fairtag_cog"
 ]
 
 async def main():
@@ -28,4 +29,13 @@ async def main():
 async def on_ready():
     print(f"Bot conectado como {bot.user}")
 
-asyncio.run(main())
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\nBot detenido.")
+    except RuntimeError as e:
+        if "Session is closed" in str(e):
+            print("\nSesión HTTP cerrada correctamente durante el cierre del bot.")
+        else:
+            raise
