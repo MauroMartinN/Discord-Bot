@@ -38,7 +38,10 @@ class FairtagCog(commands.Cog):
 
                     await ctx.send(embed=embed)
 
+            except aiohttp.ClientConnectorError:
+                await ctx.send("❌ No se puede conectar a FairTag: el servidor parece estar apagado o inaccesible.")
             except Exception as e:
                 await ctx.send(f"❌ Error al obtener los datos: {str(e)}")
+
 async def setup(bot):
     await bot.add_cog(FairtagCog(bot))
