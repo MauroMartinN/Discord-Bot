@@ -17,7 +17,8 @@ initial_extensions = [
     "cogs.moderation_cog",
     "cogs.music_cog",
     "cogs.fairtag_cog",
-    "cogs.prank_cog"
+    "cogs.prank_cog",
+    "cogs.generator_cog"
 ]
 
 async def main():
